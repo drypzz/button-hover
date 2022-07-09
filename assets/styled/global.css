@@ -1,0 +1,106 @@
+/* geral */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #101010;
+}
+
+/* warning */
+
+.warning{
+    opacity: 0;
+    display: none;
+}
+
+.warning div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.warning div p{
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: rgba(255, 0, 0, .1);
+}
+
+/* buttons */
+
+body div{
+    margin: 30px;
+}
+
+body div .btn{
+    padding: 12px 100px;
+    min-width: 200px;
+    margin: 20px;
+    cursor: pointer;
+    color: rgb(60, 137, 176);
+    border: 1px solid rgb(60, 137, 176);
+    transition: color .4s linear;
+    position: relative;
+}
+
+body div .btn:hover{
+    color: #fff;
+}
+
+body div .btn::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(60, 137, 176);
+    z-index: -1;
+    transition: transform .5s;
+    transform-origin: 0 0;
+}
+
+body div .back-btn::before{
+    transform: scaleX(0);
+}
+
+body div .back-btn-2::before{
+    transform: scaleY(0);
+}
+
+body div .back-btn:hover::before{
+    transform: scaleX(1);
+}
+
+body div .back-btn-2:hover::before{
+    transform: scaleY(1);
+}
+
+/* responsive */
+
+@media screen and (max-width: 960px){
+
+    .warning{
+        opacity: 1;
+        display: flex;
+    }
+
+    body div .btn{
+        padding: 10px 40px;
+    }
+}
